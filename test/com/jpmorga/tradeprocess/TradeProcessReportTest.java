@@ -10,8 +10,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.jpmorgan.tradeprocess.TradeProcessReport;
-import com.jpmorgan.tradeprocess.domain.ReportData;
+import com.jpmorgan.tradesettlement.TradeSettlementReport;
+import com.jpmorgan.tradesettlement.domain.ReportData;
 
 public class TradeProcessReportTest {
 
@@ -26,7 +26,7 @@ public class TradeProcessReportTest {
 	 */
 	@Test
 	public void testReportNoData() throws IOException {
-		TradeProcessReport tp = new TradeProcessReport();
+		TradeSettlementReport tp = new TradeSettlementReport();
 		
 		Collection<ReportData> report = tp.generateReport("02 Jan 2016");
 		assertNotNull(report);
@@ -41,7 +41,7 @@ public class TradeProcessReportTest {
 	 */
 	@Test
 	public void testValidReport() throws IOException {
-		TradeProcessReport tp = new TradeProcessReport();
+		TradeSettlementReport tp = new TradeSettlementReport();
 		
 		List<ReportData> report = tp.generateReport("04 Jan 2016");
 		assertNotNull(report);
@@ -56,7 +56,7 @@ public class TradeProcessReportTest {
 	 */
 	@Test
 	public void testInValidReportInput() throws IOException {
-		TradeProcessReport tp = new TradeProcessReport();
+		TradeSettlementReport tp = new TradeSettlementReport();
 		
 		List<ReportData> report = tp.generateReport("");
 		assertNull(report);
@@ -68,7 +68,7 @@ public class TradeProcessReportTest {
 	 */
 	@Test
 	public void testInValidReportNullInput() throws IOException {
-		TradeProcessReport tp = new TradeProcessReport();
+		TradeSettlementReport tp = new TradeSettlementReport();
 		
 		List<ReportData> report = tp.generateReport(null);
 		assertNull(report);
